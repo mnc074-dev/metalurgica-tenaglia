@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <!-- Configuración de la codificación de caracteres -->
+    <meta charset="utf-8">
+
+    <!-- Configuración de la adaptación a dispositivos móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título de la página -->
+    <title>Maquinarias | Metalúrgica Tenaglia</title>
+
+    <!-- Descripción utilizada por buscadores -->
+    <meta name="description" content="Catálogo completo de maquinaria pesada para la construcción, el agro y la industria. Diseños robustos de alta producción.">
+
+    <!-- Palabras clave relacionadas con el contenido del sitio -->
+    <meta name="keywords" content="Programación, CSS Grid, Flexbox, Bahía Blanca, UPSO, Maquinaria, Catálogo, Metalúrgica">
+
+    <!-- Autor del sitio web -->
+    <meta name="author" content="Matías Cuello">
+
+    <!-- Configuración para la indexación por motores de búsqueda -->
+    <meta name="robots" content="index, follow">
+
+    <!-- Hoja de estilos principal del sitio -->
+    <link rel="stylesheet" href="css/estilos5.css">
+
+    <!-- Archivo JavaScript con las funcionalidades del sitio -->
+    <script src="js/script.js" defer></script>
+
+</head>
+
+<body id="inicio">
+
+    <!-- Cabecera principal del sitio -->
+    <header class="cabecera" id="cabecera-principal">
+
+        <!-- Logotipo con enlace a la página de inicio -->
+        <a href="index.html#inicio" class="marca">
+            <img src="img/LogoGrandeMTF.jpg" alt="Logo Metalúrgica Tenaglia" class="logo-img">
+        </a>
+
+        <!-- Menú principal de navegación -->
+        <nav class="navegacion-principal" aria-label="Navegación principal">
+
+            <!-- Lista de enlaces principales del sitio -->
+            <ul>
+                <li><a href="index.html#inicio">Inicio</a></li>
+                <li><a href="maquinarias.html" class="activo">Maquinarias</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+
+        </nav>
+
+        <!-- Botón para alternar entre el modo claro y oscuro -->
+        <button id="btn-tema" class="boton-tema" aria-label="Cambiar modo de color" onclick="cambiarTema()">Día/Noche</button>
+
+    </header>
+
+    <!-- Banner principal de presentación de la página -->
+    <section class="banner-hero" id="banner-principal" aria-labelledby="tit-maquinarias">
+
+        <!-- Título principal de la página -->
+        <h1 class="titulo-principal" id="tit-maquinarias">Equipos para la industria y el agro</h1>
+
+        <!-- Descripción introductoria -->
+        <p>Soluciones industriales para construcción, producción y procesos.</p>
+
+    </section>
+
+    <!-- Barra lateral con accesos rápidos e información complementaria -->
+    <aside class="lateral-info">
+        <!-- Título del menú de categorías -->
+        <h2>Categorías</h2>
+
+        <!-- Lista de enlaces internos hacia las distintas categorías del catálogo -->
+        <ul>
+            <li><a href="#construccion">Viales y Construcción</a></li>
+            <li><a href="#agro">Línea Agrícola</a></li>
+            <li><a href="#procesos">Ingeniería de Procesos</a></li>
+        </ul>
+
+        <!-- Sección con información adicional para el cliente -->
+        <section class="info-adicional" aria-labelledby="tit-asesoramiento">
+
+            <!-- Título de la información complementaria -->
+            <h3 id="tit-asesoramiento">Asesoramiento</h3>
+
+            <!-- Descripción del servicio de asesoramiento técnico -->
+            <p>Todos nuestros equipos cuentan con garantía de fábrica y puesta en marcha técnica.</p>
+
+        </section>
+
+    </aside> 
+              
+    <!-- Contenedor principal que organiza el menú lateral y el catálogo de maquinarias -->
+    <main class="contenido-principal">
+
+        <!-- Encabezado de la sección con el isotipo institucional y el título -->
+        <header class="encabezado-grilla">
+
+            <!-- Isotipo institucional de la empresa -->
+            <figure class="viñeta-logo">
+                <img src="img/LogoVerdeFluor.png" alt="Símbolo Tenaglia">
+            </figure>
+
+            <!-- Título principal del catálogo -->
+            <h2 class="titulo-catalogo">Nuestras maquinarias</h2>
+
+        </header>
+
+        <!-- Categoría correspondiente a maquinarias viales y de construcción -->
+        <h3 id="construccion" class="titulo-categoria">Viales y Construcción</h3>
+
+        <!-- Tarjeta correspondiente a la adoquinera hidráulica -->
+        <article class="tarjeta-producto">
+
+            <!-- Imagen representativa del producto -->
+            <figure class="imagen-producto">
+                <img src="img/Bloquera.jpg" alt="Adoquinera Hidráulica Serie 8">
+            </figure>
+
+            <!-- Nombre del producto -->
+            <h4>Adoquinera hidráulica Serie VIII</h4>
+
+            <!-- Descripción general del producto -->
+            <p>Equipo hidráulico de alta presión diseñado para la fabricación continua de bloques de hormigón y adoquines articulados. Optimiza tiempos y asegura uniformidad estructural.</p>
+
+            <!-- Especificación técnica destacada -->
+            <span class="especificacion">Capacidad máxima: 700 metros cuadrados diarios</span>
+
+        </article>
+
+        <!-- Categoría correspondiente a la línea agrícola -->
+        <h3 id="agro" class="titulo-categoria">Línea Agrícola</h3>
+
+        <!-- Tarjeta correspondiente a la cosechadora de turba -->
+        <article class="tarjeta-producto">
+
+            <!-- Imagen representativa del producto -->
+            <figure class="imagen-producto">
+                <img src="img/Cosechadora.jpg" alt="Cosechadora de Turba">
+            </figure>
+
+            <!-- Nombre del producto -->
+            <h4 id="tit-cosechadora">Cosechadora de Turba</h4>
+
+            <!-- Descripción general del producto -->
+            <p>Maquinaria autopropulsada con sistema de aspirado neumático de alta capacidad. Ideal para grandes extensiones de recolección en terrenos complejos.</p>
+
+            <!-- Especificación técnica destacada -->
+            <span class="especificacion">Turbina: 1200 RPM de alta succión</span>
+
+            <!-- Información adicional sobre la certificación del producto -->
+            <section class="info-adicional" aria-labelledby="tit-certificacion">
+
+                <!-- Título de la información complementaria -->
+                <h5 id="tit-certificacion">Certificación de Calidad</h5>
+
+                <!-- Descripción de las características y certificaciones del producto -->
+                <p>Nuestra <strong>Cosechadora</strong> cuenta con un chasis reforzado pero liviano, siendo <em>ideal</em> para terrenos agropecuarios complejos. Todo el proceso de ensamblaje responde a la norma <cite>ISO-9001</cite> de calidad industrial. <mark>¡Garantía extendida por 5 años!</mark></p>
+
+            </section>
+
+        </article>
+
+        <!-- Categoría correspondiente a la ingeniería de procesos industriales -->
+        <h3 id="procesos" class="titulo-categoria">Ingeniería de Procesos</h3>
+
+        <!-- Tarjeta correspondiente a la desgarradora de bolsas -->
+        <article class="tarjeta-producto">
+
+            <!-- Imagen representativa del producto -->
+            <figure class="imagen-producto">
+                <img src="img/Robustas2.jpg" alt="Desgarradora de Bolsas">
+            </figure>
+
+            <!-- Nombre del producto -->
+            <h4>Desgarradora de Bolsas</h4>
+
+            <!-- Descripción general del producto -->
+            <p>Diseñada con montaje industrial de tolvas receptoras, cintas de transporte reforzadas y tableros de control de automatización a medida para planta de reciclado de residuos.</p>
+
+            <!-- Especificación técnica destacada -->
+            <span class="especificacion">Para Planta de Procesos de Clasificación de Residuos Urbano</span>
+
+        </article>
+
+    </main>
+
+    <!-- Pie de página del sitio -->
+    <footer class="pie-pagina" id="pie-principal">
+
+        <!-- Información institucional de la empresa -->
+        <section class="info-empresa">
+
+            <!-- Nombre de la empresa -->
+            <h3>Metalúrgica Tenaglia</h3>
+
+            <!-- Ubicación de la empresa -->
+            <p>Caseros y Ameghino — Tres Arroyos, Buenos Aires</p>
+
+            <!-- Descripción institucional -->
+            <p>Más de 50 años brindando soluciones eficientes.</p>
+
+            <!-- Información sobre la autoría del sitio -->
+            <p class="firma-autor">&copy; 2026 Matías Nicolás Cuello.</p>
+
+        </section>
+
+        <!-- Menú de navegación del pie de página -->
+        <nav class="navegacion-secundaria" aria-label="Navegación del pie de página">
+
+            <!-- Lista de enlaces secundarios del sitio -->
+            <ul>
+                <li><a href="index.html#inicio">Inicio</a></li>
+                <li><a href="maquinarias.html">Maquinarias</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+
+        </nav>
+
+        <!-- Indicadores visuales de validación del código -->
+        <p class="certificaciones-w3c">
+            <img src="img/HTML5_Valido.jpg" alt="Certificación W3C HTML5 Válido" class="badge-w3c">
+            <img src="img/CSS_Valido.jpg" alt="Certificación W3C CSS3 Válido" class="badge-w3c">
+        </p>
+
+    </footer>
+
+</body>
+</html>

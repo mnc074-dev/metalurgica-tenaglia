@@ -1,0 +1,1065 @@
+/*==========================================================================
+   1. VARIABLES CSS 
+   ========================================================================== */
+/* Declaración de las variables globales utilizadas para mantener la identidad visual del sitio */
+:root {
+    --color-primario: #7FFF00;
+    --color-secundario: #3A3A3A;        
+    --color-fondo-base: #FFFFFF;        
+    --color-fondo-tarjeta: #F4F4F4;     
+    --color-texto-principal: #000000;  
+    --color-borde: #CCCCCC;
+    --color-contraste-oscuro: #000000;  
+}
+
+/* ==========================================================================
+   2. ESTRUCTURA MACRO 
+   ========================================================================== */
+/* Reseteamos márgenes y blindamos el tamaño de TODAS las etiquetas estructurales 
+   que usamos en la maqueta */
+html, body, header, nav, main, section, article, aside, footer, div, h1, h2, h3, h4, h5, h6, p, ul, li, figure, figcaption, form, fieldset, legend, input, textarea, button, a, span, img { 
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+/* Candado global obligatorio en móviles para erradicar una posible franja blanca */
+html, body {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+/* Configuración general aplicada al cuerpo principal del documento */
+body {
+    font-family: "Arial", "Helvetica", sans-serif;
+    background-color: var(--color-fondo-base);
+    color: var(--color-texto-principal);
+    line-height: 1.6;
+    display: grid;
+    grid-template-areas:
+        "cabecera"
+        "banner"
+        "cuerpo"
+        "pie";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr auto;
+    min-height: 100vh;
+}
+
+/* Configuración adaptable aplicada a todas las imágenes del sitio */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ==========================================================================
+   3. CLASES DE UTILIDAD 
+   ========================================================================== */
+/* Estilo aplicado a la firma del autor ubicada en el pie de página */
+.firma-autor { 
+    margin-top: 1rem;
+    font-weight: bold; 
+    color: var(--color-primario); 
+}
+
+/* ==========================================================================
+   4. CABECERA INSTITUCIONAL
+   ========================================================================== */
+/* Cabecera principal que contiene la identidad visual y la navegación del sitio */
+.cabecera {
+    grid-area: cabecera;
+    background-color: var(--color-secundario);
+    color: var(--color-fondo-base);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;           
+    position: relative;
+}
+
+/* Configuración visual aplicada al logotipo principal de la empresa */
+.logo-img {
+    height: 120px;                   
+    width: auto;
+    display: block;
+    border-radius: 50%;             
+    border: 3px solid var(--color-primario); 
+    background-color: var(--color-fondo-base);
+    transition-property: transform;
+    transition-duration: 0.3s;
+    margin-right: 3rem;
+}
+
+/* Efecto visual aplicado al logotipo al posicionar el cursor sobre él */
+.logo-img:hover {transform: scale(1.05);}
+
+/* Lista principal utilizada para organizar las opciones de navegación */
+.navegacion-principal ul {
+    display: flex;
+    list-style: none;
+}
+
+/* Espaciado horizontal aplicado entre las opciones del menú */
+.navegacion-principal li {margin-right: 2rem;}
+
+/* Eliminación del margen derecho en el último elemento de la lista */
+.navegacion-principal li:last-child {margin-right: 0;}
+
+/* Estilo aplicado a los enlaces principales de navegación */
+.navegacion-principal a {
+    color: var(--color-fondo-base);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5rem; 
+    padding: 0.5rem 0;
+    transition-property: color;
+    transition-duration: 0.3s;
+}
+
+/* Cambio de color aplicado al enlace activo, enfocado o cuando recibe el cursor */
+.navegacion-principal a:hover,
+.navegacion-principal a:focus,
+.navegacion-principal a.activo {
+    color: var(--color-primario);
+    outline: none;
+}
+
+/* Botón destinado al cambio entre el modo claro y oscuro */
+.boton-tema {
+    background: none;
+    border: 2px solid var(--color-primario);
+    color: var(--color-fondo-base);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition-property: background-color, color;
+    transition-duration: 0.3s;
+    position: absolute;
+    right: 2rem; 
+}
+
+/* Cambio de apariencia aplicado al botón al interactuar con él */
+.boton-tema:hover,
+.boton-tema:focus {
+    background-color: var(--color-primario);
+    color: var(--color-texto-principal);
+}
+
+/* ==========================================================================
+   5. BANNER HERO
+   ========================================================================== */
+/* Banner principal destinado a la presentación institucional de la empresa */
+.banner-hero {
+    grid-area: banner;
+    background-color: var(--color-secundario);
+    color: var(--color-fondo-base);
+    padding: 5rem 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 4px solid var(--color-primario);
+    width: 100%; 
+}
+
+/* Título principal utilizado para destacar el nombre de la empresa */
+.banner-hero .titulo-principal {
+    font-family: "Arial Black", "Impact", sans-serif;
+    font-size: 4.5rem; 
+    line-height: 1;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem; 
+    color: var(--color-fondo-base);
+    text-shadow: 
+        -2px -2px 0 var(--color-contraste-oscuro), 
+         2px -2px 0 var(--color-contraste-oscuro), 
+        -2px 2px 0 var(--color-contraste-oscuro), 
+         2px 2px 0 var(--color-contraste-oscuro);
+}
+
+/* Subtítulo utilizado para resaltar la trayectoria de la empresa */
+.banner-hero .subtitulo-hero {
+    font-family: "Arial", "Helvetica", sans-serif;
+    font-size: 2.4rem;
+    font-weight: normal; 
+    max-width: 800px;
+    color: var(--color-primario); 
+    margin-bottom: 1.5rem;
+}
+
+/* Descripción institucional ubicada debajo del subtítulo principal */
+.banner-hero p {
+    font-family: "Arial", "Helvetica", sans-serif; 
+    font-size: 1.4rem;
+    font-weight: normal; 
+    color: var(--color-fondo-base); 
+    max-width: 700px; 
+    line-height: 1.5; 
+    margin-bottom: 1.5rem;
+}
+
+/* Ajuste del banner para las páginas internas del sitio */
+body:not(.layout-macro) .banner-hero {
+    padding: 3rem 2rem;
+    align-items: center; 
+}
+
+/* Limitación del ancho de los textos para alinearlos con el contenido inferior */
+body:not(.layout-macro) .banner-hero .titulo-principal,
+body:not(.layout-macro) .banner-hero p {
+    width: 100%;
+    max-width: 1200px; 
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Adaptación del título principal para las páginas internas */
+body:not(.layout-macro) .banner-hero .titulo-principal {
+    font-family: "Arial Black", "Impact", sans-serif;
+    font-size: 2.2rem; 
+    text-shadow: none; 
+    border-left: 5px solid var(--color-primario); 
+    padding-left: 1rem;
+    letter-spacing: normal;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+/* Adaptación del texto descriptivo para las páginas internas */
+body:not(.layout-macro) .banner-hero p {
+    font-family: "Arial", "Helvetica", sans-serif;
+    font-size: 1.1rem;
+    margin-bottom: 0;
+}
+
+/* ==========================================================================
+   6. BOTONES GENERALES
+   ========================================================================== */
+/* Botón reutilizable destinado a las principales llamadas a la acción del sitio */
+.boton-accion {
+    display: inline-block;
+    background-color: var(--color-primario);
+    color: var(--color-texto-principal);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    border: 2px solid var(--color-primario);
+    transition-property: background-color, color;
+    transition-duration: 0.3s;
+}
+
+/* Cambio de apariencia aplicado al botón al posicionar el cursor o recibir el foco */
+.boton-accion:hover, .boton-accion:focus {
+    background-color: var(--color-secundario);
+    color: var(--color-primario); 
+}
+
+/* Cambio de apariencia aplicado mientras el botón permanece presionado */
+.boton-accion:active {
+    background-color: var(--color-texto-principal);
+    color: var(--color-fondo-base);
+}
+
+/* ==========================================================================
+   7. LAYOUT INDEX
+   ========================================================================== */
+/* Contenedor principal que organiza el contenido de la página de inicio */
+.contenido-home {
+    grid-area: cuerpo;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Espaciado vertical aplicado a las secciones y títulos principales del contenido */
+.contenido-home > section, 
+.contenido-home > h2 {
+    margin-bottom: 4rem;
+}
+
+/* Eliminación del margen inferior apuntando directamente a la etiqueta section */
+.contenido-home > section:last-child {margin-bottom: 0;}
+
+/* Título utilizado para identificar las principales secciones del sitio */
+.titulo-seccion {
+    font-family: "Arial Black", "Impact", sans-serif;
+    font-size: 2rem;
+    color: inherit;
+    text-transform: uppercase;
+    border-left: 5px solid var(--color-primario);
+    padding-left: 1rem;
+}
+
+/* Distribución en formato grilla utilizada para las secciones principales del inicio */
+.propuesta-valor, .sectores-industriales {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem; 
+}
+
+/* Estilo compartido aplicado a las tarjetas informativas del sitio */
+.pilar-card, .tarjeta-sector {
+    background-color: var(--color-fondo-tarjeta);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--color-borde);
+    border-top: 4px solid var(--color-secundario);
+    color: inherit; 
+}
+
+/* Configuración específica aplicada a las tarjetas de los sectores industriales */
+.tarjeta-sector {
+    padding: 0;
+    position: relative;
+    top: 0;
+    transition-property: border-color, top; 
+    transition-duration: 0.3s;
+}
+
+/* Efecto visual aplicado al posicionar el cursor sobre una tarjeta */
+.tarjeta-sector:hover {
+    border-color: var(--color-primario);
+    top: -8px; 
+}
+
+/* Contenedor destinado a la imagen representativa de cada sector */
+.tarjeta-sector figure {
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+/* Configuración adaptable aplicada a las imágenes de las tarjetas */
+.imagen-adaptable {
+    width: 100%;
+    height: auto; 
+    display: block;
+}
+
+/* Título principal de cada tarjeta de sector */
+.tarjeta-sector h3 {
+    font-family: "Arial Black", "Impact", sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    padding: 0 1.5rem;
+    color: inherit; 
+}
+
+/* Descripción correspondiente a cada tarjeta de sector */
+.tarjeta-sector p {
+    font-size: 0.95rem;
+    color: inherit; 
+    margin-bottom: 1rem;
+    padding: 0 1.5rem;
+}
+
+/* Enlace utilizado para acceder al detalle de cada línea de maquinaria */
+.enlace-tarjeta {
+    font-weight: bold;
+    color: inherit; 
+    text-decoration: none;
+    border-bottom: 2px solid var(--color-primario);
+    padding-bottom: 2px;
+    margin: 0 1.5rem 1.5rem 1.5rem;
+    display: inline-block;
+}
+
+/* Contenedor del título y logo dentro de las grillas principales y páginas internas */
+.propuesta-valor .encabezado-grilla, 
+.sectores-industriales .encabezado-grilla,
+.contenido-principal .encabezado-grilla {
+    grid-column: 1 / 4; 
+    display: flex;
+    align-items: center; 
+    gap: 0.8rem; 
+    margin-bottom:2rem; 
+}
+
+/* Control del tamaño del logo en miniatura */
+.viñeta-logo {
+    width: 45px; 
+    height: 45px;
+    flex-shrink: 0; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Adaptación de la imagen a su contenedor */
+.viñeta-logo img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Ajuste del título para que conviva bien con el logo */
+.encabezado-grilla .titulo-seccion,
+.encabezado-grilla .titulo-catalogo,
+.encabezado-grilla .titulo-formulario {
+    border-left: none;
+    padding-left: 0;
+    margin-bottom: 0; 
+}
+
+/* ==========================================================================
+   8. ASIDE LATERAL
+   ========================================================================== */
+/* Grilla Full-Bleed para páginas internas (Maquinarias, Contacto, etc.) */
+body:not(.layout-macro) {
+    display: grid;
+    /* Las 4 columnas que configuramos: Espacio vacío | Aside | Main | Espacio vacío */
+    grid-template-columns: 1fr 280px minmax(auto, 920px) 1fr;
+    grid-template-rows: auto auto 1fr auto;
+    column-gap: 3rem; 
+    grid-template-areas:
+        "cabecera cabecera cabecera cabecera"
+        "banner banner banner banner"
+        ". lateral cuerpo ."
+        "pie pie pie pie";
+}
+
+/* Barra lateral destinada a la información complementaria y navegación */
+.lateral-info {
+    grid-area: lateral; 
+    align-self: start;  
+    margin-top: 3rem;    
+    margin-bottom: 3rem; 
+    background-color: transparent; 
+    padding: 1.5rem;
+    border: 1px solid var(--color-borde);
+    border-radius: 6px;
+    color: inherit;
+}
+
+/* Título principal de la barra lateral */
+.lateral-info > h2 {
+    font-family: "Arial Black", "Impact", sans-serif;
+    font-size: 1.3rem;
+    color: inherit; 
+    border-bottom: 2px solid var(--color-primario); 
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Título de la información complementaria */
+.info-adicional h3 { 
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem; 
+    color: inherit;
+    font-family: "Arial", "Helvetica", sans-serif; 
+    font-weight: bold;
+}
+
+/* Lista de enlaces disponibles en la barra lateral */
+.lateral-info ul { 
+    list-style: none; 
+    margin-bottom: 2.5rem;
+}
+
+/* Espaciado aplicado entre los elementos de la lista */
+.lateral-info li { margin-bottom: 1.2rem;}
+
+/* Estilo aplicado a los enlaces de navegación lateral */
+.lateral-info a { 
+    color: inherit; 
+    text-decoration: none;
+    font-weight: bold; 
+    font-family: "Arial", "Helvetica", sans-serif;
+}
+
+/* Cambio de color aplicado a los enlaces al posicionar el cursor */
+.lateral-info a:hover {color: var(--color-primario);}
+
+/* Contenedor destinado a la información complementaria */
+.info-adicional {margin-top: 1rem;}
+
+/* Texto descriptivo correspondiente a la información complementaria */
+.info-adicional p { 
+    font-size: 0.95rem; 
+    color: inherit;
+    line-height: 1.5;
+    opacity: 0.8; 
+}
+
+/* ==========================================================================
+   9. MAQUETACIÓN: MAQUINARIAS 
+   ========================================================================== */
+/* Contenedor principal que organiza el contenido de la página de maquinarias */
+.contenido-principal {
+    grid-area: cuerpo; 
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;   
+    margin-bottom: 3rem; 
+}
+
+/* Espaciado vertical aplicado entre los distintos bloques del contenido */
+.contenido-principal > article,
+.contenido-principal > h2,
+.contenido-principal > h3,
+.contenido-principal > section {
+    margin-bottom: 3rem;
+}
+
+/* Eliminación del margen inferior apuntando exactamente a las etiquetas */
+.contenido-principal > article:last-child,
+.contenido-principal > section:last-child {
+    margin-bottom: 0;
+}
+
+/* Estilo para el título principal del catálogo */
+.titulo-catalogo {
+    font-family: "Arial Black", "Impact", sans-serif;
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: inherit;
+    text-transform: uppercase;
+}
+
+/* Título utilizado para identificar cada categoría de maquinarias */
+.titulo-categoria {
+    font-family: "Arial Black", "Impact", sans-serif;
+    font-size: 1.8rem;
+    color: inherit; 
+    border-left: 5px solid var(--color-primario);
+    padding-left: 1rem;
+}
+
+/* Tarjeta principal destinada a representar cada maquinaria mediante CSS Grid */
+.tarjeta-producto {
+    display: grid;
+    grid-template-columns: 40% 60%; /* Columna 1 (Imagen) y Columna 2 (Textos) */
+    background-color: transparent;
+    border: 1px solid var(--color-borde);
+    border-radius: 6px;
+    color: inherit; 
+}
+
+/* Contenedor reservado para la imagen principal de la maquinaria */
+.imagen-producto {
+    grid-column: 1 / 2;
+    grid-row: 1 / 6; 
+    width: 100%;
+    display: flex;
+    align-items: center; 
+}
+
+/* Configuración adaptable aplicada a la imagen del producto */
+.imagen-producto img {
+    width: 100%;
+    height: auto; 
+    display: block;
+    border-radius: 4px 0 0 4px; 
+}
+
+/* Posicionamiento de todos los elementos de texto sueltos en la segunda columna */
+.tarjeta-producto > h4, 
+.tarjeta-producto > p, 
+.tarjeta-producto > span,
+.tarjeta-producto > section {
+    grid-column: 2 / 3;
+}
+
+/* Configuración del título principal de la maquinaria */
+.tarjeta-producto > h4 {
+    padding: 2rem 2rem 0 2rem;
+    margin-bottom: 0.5rem;
+    font-family: "Arial Black", "Impact", sans-serif;
+    font-size: 1.4rem;
+}
+
+/* Espaciado de los párrafos descriptivos directos de la tarjeta */
+.tarjeta-producto > p {
+    padding: 0 2rem;
+    margin-bottom: 1.5rem;
+    color: inherit; 
+}
+
+/* Etiqueta utilizada para destacar especificaciones técnicas relevantes */
+.tarjeta-producto > span.especificacion {
+    margin: 0 2rem 1.5rem 2rem;
+    align-self: start; 
+    display: inline-block;
+    background-color: var(--color-secundario);
+    color: var(--color-fondo-base);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* Bloque destinado a mostrar información complementaria del producto */
+.tarjeta-producto > section.info-adicional {
+    margin: 0 2rem 2rem 2rem;
+    padding: 1rem;
+    background-color: transparent; 
+    border-left: 4px solid var(--color-primario);
+    border-radius: 4px;
+    color: inherit;
+}
+
+/* Títulos secundarios dentro de la información complementaria */
+.tarjeta-producto > section.info-adicional h5 {
+    font-family: "Arial Black", "Impact", sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Párrafos dentro de la información complementaria */
+.tarjeta-producto > section.info-adicional p {margin-bottom: 0;}
+
+/* Personalización aplicada a la etiqueta mark utilizada en la información adicional */
+.tarjeta-producto > section.info-adicional mark {
+    background-color: transparent;
+    color: inherit;                
+    border-bottom: 2px solid var(--color-primario);
+    font-weight: bold;
+}
+
+/* ==========================================================================
+   10. MAQUETACIÓN: PÁGINA GALERÍA
+   ========================================================================== */
+/* Grilla utilizada para organizar las imágenes de la galería */
+.grilla-galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem; 
+}
+
+/* Tarjeta individual destinada a representar cada elemento de la galería */
+.card-galeria {
+    position: relative;
+    border-radius: 20px; 
+    border: 1px solid var(--color-borde); 
+    background-color: transparent;
+    overflow: hidden;
+}
+
+/* Configuración adaptable aplicada a las imágenes de la galería */
+.card-galeria img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 18px; 
+    opacity: 1;
+    transition-property: opacity;
+    transition-duration: 0.4s;
+}
+
+/* Efecto visual aplicado a la imagen al posicionar el cursor */
+.card-galeria:hover img {opacity: 0.4;}
+
+/* Capa superpuesta destinada a mostrar información de cada imagen */
+.capa-informacion {
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.5) 60%, transparent 100%); 
+    color: #FFFFFF; 
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    opacity: 0;
+    transition-property: opacity, bottom;
+    transition-duration: 0.4s;
+}
+
+/* Título correspondiente a la información de cada imagen */
+.capa-informacion h3 {
+    font-family: "Arial Black", "Impact", sans-serif;
+    font-size: 1.2rem;
+    color: var(--color-primario);
+    margin-bottom: 0.5rem; 
+}
+
+/* Descripción correspondiente a la información de cada imagen */
+.capa-informacion p {
+    font-family: "Arial", "Helvetica", sans-serif;
+    font-size: 0.95rem;
+    color: #FFFFFF; 
+    line-height: 1.4;
+}
+
+/* Visualización de la capa informativa al posicionar el cursor sobre la tarjeta */
+.card-galeria:hover .capa-informacion {
+    opacity: 1;
+    bottom: 0; 
+}
+
+/* ==========================================================================
+   11. MAQUETACIÓN: FORMULARIO DE CONTACTO
+   ========================================================================== */
+/* Título principal de la sección de contacto */
+.titulo-formulario {
+    font-family: "Arial Black", "Impact", sans-serif;
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: inherit;
+    text-transform: uppercase;
+}
+
+/* Formulario principal destinado al contacto con la empresa */
+.formulario-industrial {
+    background-color: transparent;
+    border: 1px solid var(--color-borde);
+    padding: 3rem 2rem;
+    border-radius: 15px;
+    color: inherit;
+    max-width: 650px;  
+}
+
+/* Agrupación de campos relacionados dentro del formulario */
+.formulario-industrial fieldset { 
+    border: 2px solid var(--color-primario);
+    border-radius: 10px;
+    padding: 20px;
+    background-color: transparent; 
+}
+
+/* Título correspondiente a cada grupo de campos del formulario */
+.formulario-industrial legend {
+    font-family: "Arial Black", "Impact", sans-serif;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    color: inherit; 
+    border-left: 5px solid var(--color-primario); 
+    padding-left: 1rem;
+}
+
+/* Contenedor individual de cada campo del formulario */
+.campo-formulario { 
+    margin-bottom: 1.5rem; 
+    display: flex; 
+    flex-direction: column;
+}
+
+/* Etiqueta descriptiva correspondiente a cada campo */
+.campo-formulario label { 
+    font-weight: bold; 
+    margin-bottom: 0.5rem; 
+    color: inherit;
+}
+
+/* Configuración compartida de los campos de ingreso de datos */
+.campo-formulario input, .campo-formulario textarea {
+    padding: 12px;
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    color: inherit; 
+    background-color: transparent;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+/* Cambio de apariencia aplicado a los campos al recibir el foco */
+.campo-formulario input:focus, .campo-formulario textarea:focus {
+    border-color: var(--color-primario);
+    background-color: transparent;
+    outline: none;
+}
+
+/* Texto de ayuda utilizado para orientar al usuario durante la carga de datos */
+.ayuda-texto { 
+    font-size: 0.85rem;
+    color: inherit; 
+    margin-top: 0.3rem; 
+    opacity: 0.8;
+}
+
+/* Botón destinado al envío del formulario */
+.boton-enviar {
+    background-color: var(--color-secundario);
+    color: var(--color-fondo-base);
+    font-family: "Arial Black", "Impact", sans-serif;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+/* Cambio de apariencia aplicado al botón al interactuar con él */
+.boton-enviar:hover, .boton-enviar:focus { 
+    opacity: 0.8;
+    outline: none; 
+}
+
+/* Cambio de apariencia aplicado mientras el botón permanece presionado */
+.boton-enviar:active { 
+    background-color: var(--color-contraste-oscuro);
+    color: var(--color-fondo-base); 
+}
+
+/* ==========================================================================
+   12. PIE DE PÁGINA INSTITUCIONAL
+   ========================================================================== */
+/* Pie de página principal del sitio */
+.pie-pagina {
+    grid-area: pie;
+    background-color: var(--color-secundario);
+    color: var(--color-fondo-base);
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 4px solid var(--color-primario);
+}
+
+/* Contenedor destinado a la información institucional de la empresa */
+.info-empresa { 
+    margin-right: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Nombre comercial de la empresa */
+.info-empresa h3 { 
+    font-family: "Arial Black", "Impact", sans-serif; 
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem; 
+    color: var(--color-primario); 
+}
+
+/* Información descriptiva de la empresa */
+.info-empresa p { 
+    font-size: 0.9rem;
+    color: var(--color-fondo-base); 
+}
+
+/* Lista de enlaces secundarios del sitio */
+.navegacion-secundaria ul { 
+    display: flex; 
+    list-style: none;
+    margin-bottom: 1rem; 
+}
+
+/* Espaciado horizontal entre las opciones del menú */
+.navegacion-secundaria li { margin-right: 1.5rem;}
+
+/* Eliminación del margen derecho del último elemento de la lista */
+.navegacion-secundaria li:last-child { margin-right: 0;}
+
+/* Enlaces correspondientes al menú secundario */
+.navegacion-secundaria a { 
+    color: var(--color-fondo-base); 
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+/* Cambio de color aplicado a los enlaces al posicionar el cursor */
+.navegacion-secundaria a:hover { color: var(--color-primario);}
+
+/* Contenedor destinado a las certificaciones visuales del sitio */
+.certificaciones-w3c { display: flex;}
+
+/* Insignia utilizada para representar una certificación */
+.badge-w3c {
+    margin-right: 1rem;
+    width: 80px; 
+    border-radius: 3px;
+    border: 1px solid var(--color-fondo-base);
+}
+
+/* Eliminación del margen derecho de la última insignia */
+.badge-w3c:last-child { margin-right: 0;}
+
+/* ==========================================================================
+   13. DISEÑO RESPONSIVO (Media Queries)
+   ========================================================================== */
+/* Adaptaciones aplicadas para pantallas medianas (Tablets y menores) */
+@media (max-width: 900px) {
+
+    /* Reorganización de las grillas principales en una única columna */
+    .propuesta-valor, 
+    .sectores-industriales { 
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    /* Reseteamos los títulos y los nuevos encabezados con logo  */
+    .propuesta-valor .titulo-seccion, 
+    .sectores-industriales .titulo-seccion,
+    .propuesta-valor .encabezado-grilla, 
+    .sectores-industriales .encabezado-grilla {
+        grid-column: auto;
+    }
+    
+    /* Adaptación de la grilla del body a una sola columna */
+    body:not(.layout-macro) {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "cabecera"
+            "banner"
+            "lateral"
+            "cuerpo"
+            "pie";
+    } 
+    
+    /* Adaptación a móvil para tarjetas CSS Grid */
+    /* Reorganización de la tarjeta de producto en una única columna */
+    .tarjeta-producto {grid-template-columns: 1fr;} 
+
+    /* La imagen pasa a ocupar la parte superior de la tarjeta */
+    .imagen-producto {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2; 
+    }
+
+    /* Ajuste de los bordes redondeados de la imagen */
+    .imagen-producto img {border-radius: 4px 4px 0 0;}
+
+    /* Reubicación de todos los textos descriptivos en la misma columna */
+    .tarjeta-producto > h4, 
+    .tarjeta-producto > p, 
+    .tarjeta-producto > span,
+    .tarjeta-producto > section {
+        grid-column: 1 / 2;
+    }
+    
+    /* Adaptación de la galería a una única columna */
+    .grilla-galeria {grid-template-columns: 1fr;}
+    
+    /* Reorganización vertical del pie de página */
+    .pie-pagina { 
+        flex-direction: column;
+        text-align: center; 
+    }
+
+    /* Espaciado compartido entre los elementos del pie */
+    .pie-pagina > section, 
+    .pie-pagina > nav, 
+    .pie-pagina > p { 
+        margin-bottom: 2rem;
+        margin-right: 0; 
+    }
+
+    /* Eliminación del margen inferior del último elemento */
+    .pie-pagina > p:last-child { 
+        margin-bottom: 0;
+    }
+}
+
+/* Adaptaciones aplicadas para dispositivos móviles (Celulares) */
+@media (max-width: 600px) {
+
+    /* Reorganización vertical de la cabecera */
+    .cabecera { 
+        flex-direction: column;
+        padding: 1rem; 
+    }
+
+    /* Ajuste del logotipo para pantallas pequeñas */
+    .logo-img { 
+        margin-right: 0;
+        margin-bottom: 1.5rem; 
+        width: 100px; 
+        height: 100px;
+    }
+
+    /* Reubicación del botón de cambio de tema */
+    .boton-tema { 
+        position: static;
+        margin-top: 1rem; 
+    }
+    
+    /* Reorganización vertical del menú principal */
+    .navegacion-principal ul { 
+        flex-direction: column;
+        align-items: center; 
+    }
+
+    /* Espaciado entre las opciones del menú */
+    .navegacion-principal ul li { 
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    /* Eliminación del margen inferior de la última opción */
+    .navegacion-principal ul li:last-child {margin-bottom: 0;}
+    
+    /* Reducción del espaciado interno del banner principal */
+    .banner-hero {padding: 3rem 1rem;}
+
+    /* Prevención del desbordamiento horizontal por textos largos */
+    .banner-hero .titulo-principal { 
+        font-size: 1.8rem;
+        letter-spacing: normal; 
+        overflow-wrap: break-word; 
+    }
+
+    /* Ajuste de subtítulos para evitar scroll horizontal fantasma */
+    .banner-hero .subtitulo-hero {
+        font-size: 1.15rem;
+        overflow-wrap: break-word;
+    }
+
+    /* Tamaño de fuente aplicado al texto descriptivo del banner principal */
+    .banner-hero p {font-size: 0.95rem;}
+
+    /* Adaptación del botón principal a la pantalla del celular */
+    .boton-accion {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 1rem;
+        font-size: 0.95rem;
+    }
+
+    /* Reducción de los márgenes laterales del contenido principal */
+    .contenido-home {padding: 1.5rem 1rem;}
+
+    /* Ajuste de los títulos de cada sección interna */
+    .titulo-seccion {
+        font-size: 1.3rem;
+        overflow-wrap: break-word;
+    }
+
+    /* Ajuste de los títulos internos de cada tarjeta */
+    .pilar-card h3,
+    .tarjeta-sector h3 {
+        font-size: 1.1rem;
+        overflow-wrap: break-word;
+    }
+
+    /* Ajuste del margen interno del pie de página */
+    .pie-pagina {padding: 2rem 1rem;}
+
+    /* Apilamiento de las insignias de validación W3C */
+    .certificaciones-w3c {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    /* Elimina la separación derecha del último distintivo de validación */
+    .badge-w3c { margin-right: 0;}
+
+    /* Ajustes del banner de inicio para celulares */
+    .banner-index {
+        background-image: none;
+        background-color: #3A3A3A; 
+        padding: 3rem 2rem;
+        min-height: 0; 
+    }
+
+    /* Centra el contenido del banner principal de la página de inicio */
+    .banner-index .banner-contenido {
+        width: 100%; 
+        text-align: center; 
+    }
+}

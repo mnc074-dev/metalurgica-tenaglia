@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <!-- Codificación de caracteres que permite utilizar caracteres especiales -->
+    <meta charset="utf-8">
+
+    <!-- Configuración de visualización adaptable para dispositivos móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título que aparece en la pestaña del navegador -->
+    <title>Contacto Técnico | Metalúrgica Tenaglia</title>
+
+    <!-- Resumen del contenido que los buscadores mostrarán en sus resultados -->
+    <meta name="description" content="Solicite su cotización técnica para bloqueras hidráulicas y maquinaria pesada a medida. Formulario accesible de atención directa.">
+
+    <!-- Palabras clave relacionadas con la temática del sitio -->
+    <meta name="keywords" content="Programación, CSS Grid, Flexbox, Bahía Blanca, UPSO, Contacto, Presupuesto, Metalúrgica">
+
+    <!-- Autor del documento -->
+    <meta name="author" content="Matías Cuello">
+
+    <!-- Indica a los rastreadores si deben indexar la página y seguir los enlaces -->
+    <meta name="robots" content="index, follow">
+
+    <!-- Vinculación de la hoja de estilos externa -->
+    <link rel="stylesheet" href="css/estilos5.css">
+
+    <!-- Vinculación del archivo JavaScript encargado de la interacción del sitio -->
+    <script src="js/script.js" defer></script>
+
+</head>
+
+<body id="inicio">
+
+    <!-- Cabecera principal del sitio -->
+    <header class="cabecera" id="cabecera-principal">
+
+        <!-- Logotipo que permite regresar al inicio del sitio -->
+        <a href="index.html#inicio" class="marca">
+            <img src="img/LogoGrandeMTF.jpg" alt="Logo de Metalúrgica Tenaglia" class="logo-img">
+        </a>
+
+        <!-- Menú principal de navegación -->
+        <nav class="navegacion-principal" aria-label="Navegación principal">
+
+            <!-- Lista de accesos a las principales secciones del sitio -->
+            <ul>
+                <li><a href="index.html#inicio">Inicio</a></li>
+                <li><a href="maquinarias.html">Maquinarias</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="contacto.html" class="activo">Contacto</a></li>
+            </ul>
+
+        </nav>
+
+        <!-- Botón destinado al cambio entre modo claro y oscuro -->
+        <button id="btn-tema" class="boton-tema" aria-label="Cambiar modo de color" onclick="cambiarTema()">Día/Noche</button>
+
+    </header>
+
+    <!-- Banner principal correspondiente a la página de contacto -->
+    <section class="banner-hero" id="banner-principal" aria-labelledby="tit-contacto">
+
+        <!-- Título principal de la página -->
+        <h1 class="titulo-principal"  id="tit-contacto">SOLICITUD DE COTIZACIÓN</h1>
+
+        <!-- Descripción introductoria de la sección -->
+        <p>Comuníquese con nuestra oficina técnica para presupuestos de alta escala.</p>
+
+    </section>
+
+    <!-- Barra lateral con información institucional -->
+    <aside class="lateral-info">
+
+        <!-- Información correspondiente a la ubicación de la empresa -->
+        <h2>Atención en Planta</h2>
+
+        <!-- Dirección de la empresa -->
+        <p>Caseros y Ameghino — Tres Arroyos, Buenos Aires.</p>
+
+        <!-- Información correspondiente al horario de atención -->
+        <h2>Horario de Oficina</h2>
+
+        <!-- Horario de atención al público -->
+        <p>Lunes a Viernes de 06:00 a 15:00 hs.</p>
+
+    </aside>
+
+    <!-- Contenedor principal que organiza la barra lateral y el formulario de contacto -->
+    <main class="contenido-principal">
+   
+        
+
+        <!-- Encabezado de la sección con el isotipo institucional y el título -->
+        <header class="encabezado-grilla">
+
+            <!-- Isotipo institucional de la empresa -->
+            <figure class="viñeta-logo">
+                <img src="img/LogoVerdeFluor.png" alt="Símbolo Tenaglia">
+            </figure>
+
+            <!-- Título principal del formulario -->
+            <h2 class="titulo-formulario">Inicie su Consulta Comercial</h2>
+
+        </header>
+
+        <!-- Formulario destinado al envío de consultas técnicas -->
+        <form action="#" method="POST" class="formulario-industrial">
+
+            <!-- Agrupación de los datos solicitados al usuario -->
+            <fieldset>
+
+                <!-- Título del grupo de campos -->
+                <legend>Datos de la Consulta</legend>
+
+                <!-- Campo destinado al ingreso del nombre completo -->
+                <p class="campo-formulario">
+
+                    <!-- Etiqueta del campo de nombre -->
+                    <label for="nombre-cliente">Nombre Completo:</label>
+
+                    <!-- Campo de texto para ingresar el nombre -->
+                    <input type="text" id="nombre-cliente" name="nombre" required minlength="4" pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]+" aria-describedby="ayuda-nombre">
+
+                    <!-- Mensaje de ayuda para completar el nombre -->
+                    <span id="ayuda-nombre" class="ayuda-texto">Ingrese únicamente letras y espacios (Mínimo 4 caracteres).</span>
+
+                </p>
+
+                <!-- Campo destinado al ingreso del correo electrónico -->
+                <p class="campo-formulario">
+
+                    <!-- Etiqueta del campo de correo electrónico -->
+                    <label for="email-cliente">Correo Electrónico de la Empresa:</label>
+
+                    <!-- Campo para ingresar el correo electrónico -->
+                    <input type="email" id="email-cliente" name="email" required placeholder="ejemplo@empresa.com">
+
+                </p>
+
+                <!-- Campo destinado al ingreso del teléfono de contacto -->
+                <p class="campo-formulario">
+
+                    <!-- Etiqueta del campo de teléfono -->
+                    <label for="telefono-cliente">Teléfono de Contacto Celular:</label>
+
+                    <!-- Campo para ingresar el teléfono -->
+                    <input type="tel" id="telefono-cliente" name="telefono" required pattern="[0-9]{10}" aria-describedby="ayuda-tel" placeholder="2914000000">
+
+                    <!-- Mensaje de ayuda para completar el teléfono -->
+                    <span id="ayuda-tel" class="ayuda-texto">Ingrese 10 números corridos sin espacios ni guiones (Código de área + número).</span>
+
+                </p>
+
+                <!-- Campo destinado al detalle del requerimiento industrial -->
+                <p class="campo-formulario">
+
+                    <!-- Etiqueta del campo de mensaje -->
+                    <label for="mensaje-cliente">Detalle del Requerimiento Industrial:</label>
+
+                    <!-- Área de texto para describir la consulta -->
+                    <textarea id="mensaje-cliente" name="mensaje" rows="5" required minlength="10" placeholder="Escriba aquí los detalles de la maquinaria requerida..."></textarea>
+
+                </p>
+
+                <!-- Campo correspondiente al envío del formulario -->
+                <p class="campo-formulario">
+
+                    <!-- Botón para enviar la solicitud técnica -->
+                    <button type="submit" class="boton-enviar">Enviar Solicitud Técnica</button>
+
+                </p>
+
+            </fieldset>
+
+        </form>
+
+        
+
+    </main>
+
+    <!-- Pie de página del sitio -->
+    <footer class="pie-pagina" id="pie-principal">
+
+        <!-- Información institucional de la empresa -->
+        <section class="info-empresa">
+
+            <!-- Nombre de la empresa -->
+            <h3>Metalúrgica Tenaglia</h3>
+
+            <!-- Ubicación de la empresa -->
+            <p>Caseros y Ameghino — Tres Arroyos, Buenos Aires</p>
+
+            <!-- Descripción institucional -->
+            <p>Más de 50 años brindando soluciones eficientes.</p>
+
+            <!-- Información sobre la autoría del sitio -->
+            <p class="firma-autor">&copy; 2026 Matías Nicolás Cuello.</p>
+
+        </section>
+
+        <!-- Menú secundario de navegación -->
+        <nav class="navegacion-secundaria" aria-label="Navegación del pie de página">
+
+            <!-- Lista de accesos rápidos del pie de página -->
+            <ul>
+                <li><a href="index.html#inicio">Inicio</a></li>
+                <li><a href="maquinarias.html">Maquinarias</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+
+        </nav>
+
+        <!-- Indicadores visuales de validación del código -->
+        <p class="certificaciones-w3c">
+            <img src="img/HTML5_Valido.jpg" alt="Certificación W3C HTML5 Válido" class="badge-w3c">
+            <img src="img/CSS_Valido.jpg" alt="Certificación W3C CSS3 Válido" class="badge-w3c">
+        </p>
+
+    </footer>
+
+</body>
+</html>
