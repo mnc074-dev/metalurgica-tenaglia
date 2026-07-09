@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <!-- Codificación de caracteres que permite utilizar caracteres especiales -->
+    <meta charset="utf-8">
+
+    <!-- Configuración de visualización adaptable para dispositivos móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título que aparece en la pestaña del navegador -->
+    <title>Galería | Metalúrgica Tenaglia</title>
+
+    <!-- Resumen del contenido que los buscadores mostrarán en sus resultados -->
+    <meta name="description" content="Galería fotográfica de las instalaciones, líneas de ensamblaje y maquinaria industrial pesada de Metalúrgica Tenaglia.">
+
+    <!-- Palabras clave relacionadas con la temática del sitio -->
+    <meta name="keywords" content="Programación, CSS Grid, Flexbox, Bahía Blanca, UPSO, Galería, Metalúrgica">
+
+    <!-- Autor del documento -->
+    <meta name="author" content="Matías Cuello">
+
+    <!-- Indica a los rastreadores si deben indexar la página y seguir los enlaces -->
+    <meta name="robots" content="index, follow">
+
+    <!-- Importamos estilos de letra --> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+
+    <!-- Vinculación de la hoja de estilos externa -->
+    <link rel="stylesheet" href="css/estilos5.css">
+
+    <!-- Vinculación del archivo JavaScript encargado de la interacción del sitio -->
+    <script src="js/script.js" defer></script>
+
+</head>
+
+<body id="inicio">
+
+    <!-- Cabecera principal del sitio -->
+    <header class="cabecera" id="cabecera-principal">
+
+        <!-- Logotipo que permite regresar al inicio del sitio -->
+        <a href="index.html#inicio" class="marca">
+            <img src="img/LogoGrandeMTF.jpg" alt="Logo Metalúrgica Tenaglia" class="logo-img">
+        </a>
+
+        <!-- Menú principal de navegación -->
+        <nav class="navegacion-principal" aria-label="Navegación principal">
+
+            <!-- Lista de accesos a las principales secciones del sitio -->
+            <ul>
+                <li><a href="index.html#inicio">Inicio</a></li>
+                <li><a href="maquinarias.html">Maquinarias</a></li>
+                <li><a href="galeria.html" class="activo">Galería</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+
+        </nav>
+
+        <!-- Botón destinado al cambio entre modo claro y oscuro -->
+        <button class="boton-tema" onclick="cambiarTema()" title="Cambiar Día/Noche">
+            <img src="img/boton1.png" alt="Modo Día/Noche">
+        </button>
+
+    </header>
+
+    <!-- Banner principal correspondiente a la página de galería -->
+    <section class="banner-hero" id="banner-principal" aria-labelledby="tit-galeria">
+
+        <!-- Título principal de la página -->
+        <h1 class="titulo-principal" id="tit-galeria">PLANTA INDUSTRIAL</h1>
+
+        <!-- Descripción introductoria de la sección -->
+        <p>Un recorrido visual por nuestros procesos de precisión y armado de maquinarias.</p>
+
+    </section>
+
+    <!-- Barra lateral con información complementaria -->
+    <aside class="lateral-info">
+
+        <!-- Título de la sección informativa -->
+        <h2>Archivos Visuales</h2>
+
+        <!-- Descripción del contenido fotográfico -->
+        <p>Fotografías capturadas directamente en las líneas de producción de nuestra empresa.</p>
+
+        <!-- Información adicional sobre las imágenes publicadas -->
+        <section class="info-adicional">
+
+            <!-- Título de la información complementaria -->
+            <h3>Derechos Reservados</h3>
+
+            <!-- Descripción de la protección legal del material exhibido -->
+            <p>Las maquinarias expuestas en las fotografías disponen de patentes industriales registradas.</p>
+
+        </section>
+
+    </aside>
+
+    <!-- Contenedor principal que organiza la barra lateral y la galería fotográfica -->
+    <main class="contenido-principal">
+
+        <!-- Encabezado de la sección con el isotipo institucional y el título -->
+        <header class="encabezado-grilla">
+
+            <!-- Isotipo institucional de la empresa -->
+            <figure class="viñeta-logo">
+                <img src="img/LogoVerdeFluor.png" alt="Símbolo Tenaglia">
+            </figure>
+
+            <!-- Título principal de la galería -->
+            <h2 class="titulo-catalogo">Trabajos realizados</h2>
+
+        </header>
+
+        <!-- Galería que agrupa las fotografías institucionales -->
+        <section class="grilla-galeria">
+
+            <!-- Tarjeta correspondiente a la línea de adoquineras hidráulicas -->
+            <figure class="card-galeria" id="sector-1">
+                <img src="img/Bloquera.jpg" alt="Línea de montaje de adoquinera">
+                <figcaption class="capa-informacion">
+                    <h3>Adoquinera Hidráulica</h3>
+                    <p>Fase final de ensamble de adoquinera hidráulica Serie 8.</p>
+                </figcaption>
+            </figure>
+
+            <!-- Tarjeta correspondiente a la fabricación de cámaras de inspección -->
+            <figure class="card-galeria">
+                <img src="img/Bloquera2.jpg" alt="Cámaras de inspección">
+                <figcaption class="capa-informacion">
+                    <h3>Cámaras de inspección</h3>
+                    <p>Máquina para hacer cámaras de inspección.</p>
+                </figcaption>
+            </figure>
+
+            <!-- Tarjeta correspondiente a otra línea de adoquineras hidráulicas -->
+            <figure class="card-galeria" id="sector-4">
+                <img src="img/Robustas.jpg" alt="Adoquineras hidráulicas">
+                <figcaption class="capa-informacion">
+                    <h3>Adoquinera Hidráulica</h3>
+                    <p>Adoquinera hidráulica finalizada y lista para entregar</p>
+                </figcaption>
+            </figure>
+
+            <!-- Tarjeta correspondiente al área de ingeniería de procesos -->
+            <figure class="card-galeria" id="sector-3">
+                <img src="img/Robustas2.jpg" alt="Desgarradora de bolsas">
+                <figcaption class="capa-informacion">
+                    <h3>Ingeniería de Procesos</h3>
+                    <p>Desgarradora de bolsas para clasificación de residuos urbanos</p>
+                </figcaption>
+            </figure>
+
+            <!-- Tarjeta correspondiente al hormigonero industrial -->
+            <figure class="card-galeria">
+                <img src="img/Galería0.jpg" alt="Hormigonero de 4 m3">
+                <figcaption class="capa-informacion">
+                    <h3>Estructuras Robustas</h3>
+                    <p>Hormigonero de 4 metros cúbicos.</p>
+                </figcaption>
+            </figure>
+
+            <!-- Tarjeta correspondiente a la mezcladora industrial -->
+            <figure class="card-galeria">
+                <img src="img/Galería.jpg" alt="Mescladora">
+                <figcaption class="capa-informacion">
+                    <h3>Mezcladora de tambor vasculante</h3>
+                    <p>Mezcladora de tambor vasculante de 360 litros.</p>
+                </figcaption>
+            </figure>
+
+            <!-- Tarjeta correspondiente a la línea agrícola -->
+            <figure class="card-galeria" id="sector-2">
+                <img src="img/Cosechadora.jpg" alt="Cosechadora de turba">
+                <figcaption class="capa-informacion">
+                    <h3>Línea Agrícola</h3>
+                    <p>Cosechadora de turba por vacío</p>
+                </figcaption>
+            </figure>
+
+            <!-- Tarjeta correspondiente a la presentación y entrega de maquinaria -->
+            <figure class="card-galeria">
+                <img src="img/Clientes.jpg" alt="Presentación a clientes">
+                <figcaption class="capa-informacion">
+                    <h3>Presentación y puesta en marcha</h3>
+                    <p>Presentación y entrega de cosechadora de turba</p>
+                </figcaption>
+            </figure>
+
+        </section>
+
+        
+
+    </main>
+
+    <!-- Pie de página del sitio -->
+    <footer class="pie-pagina" id="pie-principal">
+
+        <!-- Información institucional de la empresa -->
+        <section class="info-empresa">
+
+            <!-- Nombre de la empresa -->
+            <h3>Metalúrgica Tenaglia</h3>
+
+            <!-- Ubicación de la empresa -->
+            <p>Caseros y Ameghino — Tres Arroyos, Buenos Aires</p>
+
+            <!-- Descripción institucional -->
+            <p>Más de 50 años brindando soluciones eficientes.</p>
+
+            <!-- Información sobre la autoría del sitio -->
+            <p class="firma-autor">&copy; 2026 Matías Nicolás Cuello.</p>
+
+        </section>
+
+        <!-- Menú secundario de navegación -->
+        <nav class="navegacion-secundaria" aria-label="Navegación del pie de página">
+
+            <!-- Lista de accesos rápidos del pie de página -->
+            <ul>
+                <li><a href="index.html#inicio">Inicio</a></li>
+                <li><a href="maquinarias.html">Maquinarias</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+
+        </nav>
+
+        <!-- Indicadores visuales de validación del código -->
+        <div class="certificaciones-w3c">
+            <img src="img/HTML5_Valido.jpg" alt="Certificación W3C HTML5 Válido" class="badge-w3c">
+            <img src="img/CSS_Valido.jpg" alt="Certificación W3C CSS3 Válido" class="badge-w3c">
+        </div>
+
+    </footer>
+
+</body>
+</html>
