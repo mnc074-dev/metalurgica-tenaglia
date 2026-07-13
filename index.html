@@ -23,6 +23,11 @@
     <!-- Indica a los rastreadores si deben indexar la página y seguir los enlaces -->
     <meta name="robots" content="index, follow">
 
+    <!-- Importamos estilos de letra --> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+
     <!-- Vinculación de la hoja de estilos externa -->
     <link rel="stylesheet" href="css/estilos5.css">
 
@@ -55,7 +60,9 @@
         </nav>
 
         <!-- Botón destinado al cambio entre modo claro y oscuro -->
-        <button id="btn-tema" class="boton-tema" aria-label="Cambiar modo de color" onclick="cambiarTema()">Día/Noche</button>
+        <button class="boton-tema" onclick="cambiarTema()" title="Cambiar Día/Noche">
+            <img src="img/boton1Os.png" alt="Modo Día/Noche">
+        </button>
 
     </header>
 
@@ -69,10 +76,12 @@
         <h2 class="subtitulo-hero">Más de 50 años de trayectoria, calidad y compromiso.</h2>
 
         <!-- Descripción principal de la actividad de la empresa -->
-        <p>Fabricamos soluciones eficientes para procesos industriales del país. Maquinaria pesada diseñada para maximizar el rendimiento en la construcción, el agro y la industria.</p>
+        <p>Fabricamos maquinaria pesada para el agro, la construcción y la industria.</p>
 
         <!-- Botón de acceso al formulario de contacto -->
-        <a href="contacto.html" class="boton-accion">Solicitar Cotización Técnica</a>
+        <button id="btn-abrir-presupuesto" class="boton-metalico" aria-label="Solicitar Cotización Técnica">
+            <img src="img/BSolOs.png" alt="Botón Solicitar Cotización">
+        </button>
 
     </section>
 
@@ -199,12 +208,36 @@
         </nav>
 
         <!-- Indicadores visuales de validación del código -->
-        <p class="certificaciones-w3c">
+        <div class="certificaciones-w3c">
             <img src="img/HTML5_Valido.jpg" alt="Certificación W3C HTML5 Válido" class="badge-w3c">
             <img src="img/CSS_Valido.jpg" alt="Certificación W3C CSS3 Válido" class="badge-w3c">
-        </p>
+        </div>
 
     </footer>
+    
+    <div id="modal-presupuesto" class="modal-pantalla">
+        <div class="modal-tarjeta">
+            <button id="btn-cerrar-presupuesto" class="modal-cerrar" aria-label="Cerrar ventana">&times;</button>
+            
+            <h3 class="modal-titulo">¿Cómo preferís solicitar tu consulta/cotización?</h3>
+            <p class="modal-descripcion">Elegí el canal de comunicación que te resulte más rápido y cómodo:</p>
+            
+            <div class="modal-opciones">
+                <a href="https://wa.me/5492983415875?text=Hola!%20Quisiera%20solicitar%20una%20cotización%20técnica%20sobre%20sus%20maquinarias." 
+                   class="opcion-enlace whatsapp" 
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                    <span>Por WhatsApp (Atención Ágil)</span>
+                </a>
+                
+                <a href="contacto.html" class="opcion-enlace email">
+                    <span>Por Correo (Formulario Oficial)</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/modal.js"></script>
 
 </body>
 </html>

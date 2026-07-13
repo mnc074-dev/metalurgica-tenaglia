@@ -23,6 +23,11 @@
     <!-- Indica a los rastreadores si deben indexar la página y seguir los enlaces -->
     <meta name="robots" content="index, follow">
 
+    <!-- Importamos estilos de letra --> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+
     <!-- Vinculación de la hoja de estilos externa -->
     <link rel="stylesheet" href="css/estilos5.css">
 
@@ -55,7 +60,9 @@
         </nav>
 
         <!-- Botón destinado al cambio entre modo claro y oscuro -->
-        <button id="btn-tema" class="boton-tema" aria-label="Cambiar modo de color" onclick="cambiarTema()">Día/Noche</button>
+        <button class="boton-tema" onclick="cambiarTema()" title="Cambiar Día/Noche">
+            <img src="img/boton1Os.png" alt="Modo Día/Noche">
+        </button>
 
     </header>
 
@@ -223,10 +230,10 @@
         </nav>
 
         <!-- Indicadores visuales de validación del código -->
-        <p class="certificaciones-w3c">
+        <div class="certificaciones-w3c">
             <img src="img/HTML5_Valido.jpg" alt="Certificación W3C HTML5 Válido" class="badge-w3c">
             <img src="img/CSS_Valido.jpg" alt="Certificación W3C CSS3 Válido" class="badge-w3c">
-        </p>
+        </div>
 
     </footer>
 
