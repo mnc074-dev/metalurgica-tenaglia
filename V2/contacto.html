@@ -15,7 +15,7 @@
     <meta name="description" content="Solicite su cotización técnica para bloqueras hidráulicas y maquinaria pesada a medida. Formulario accesible de atención directa.">
 
     <!-- Palabras clave relacionadas con la temática del sitio -->
-    <meta name="keywords" content="Programación, CSS Grid, Flexbox, Bahía Blanca, UPSO, Contacto, Presupuesto, Metalúrgica">
+    <meta name="keywords" content="Metalúrgica Tenaglia, Maquinaria Industrial, Adoquineras Hidráulicas, Bloqueras, Cosechadoras de Turba, Maquinaria Pesada, Automatización Industrial, Agro, Construcción, Tres Arroyos, Argentina">
 
     <!-- Autor del documento -->
     <meta name="author" content="Matías Cuello">
@@ -61,7 +61,7 @@
 
         <!-- Botón destinado al cambio entre modo claro y oscuro -->
         <button class="boton-tema" onclick="cambiarTema()" title="Cambiar Día/Noche">
-            <img src="img/boton1.png" alt="Modo Día/Noche">
+            <img src="img/boton1Os.png" alt="Modo Día/Noche">
         </button>
 
     </header>
@@ -112,8 +112,8 @@
 
         </header>
 
-        <!-- Formulario destinado al envío de consultas técnicas -->
-        <form action="#" method="POST" class="formulario-industrial">
+        <!-- Formulario destinado al envío de consultas técnicas vía WhatsApp -->
+        <form id="formulario-whatsapp" class="formulario-industrial">
 
             <!-- Agrupación de los datos solicitados al usuario -->
             <fieldset>
@@ -123,60 +123,46 @@
 
                 <!-- Campo destinado al ingreso del nombre completo -->
                 <div class="campo-formulario">
-
-                    <!-- Etiqueta del campo de nombre -->
-                    <label for="nombre-cliente">Nombre Completo:</label>
-
-                    <!-- Campo de texto para ingresar el nombre -->
-                    <input type="text" id="nombre-cliente" name="nombre" required minlength="4" pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]+" aria-describedby="ayuda-nombre">
-
-                    <!-- Mensaje de ayuda para completar el nombre -->
+                    <label for="wa-nombre">Nombre Completo *</label>
+                    <input type="text" id="wa-nombre" name="nombre" required minlength="4" pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]+" aria-describedby="ayuda-nombre">
                     <span id="ayuda-nombre" class="ayuda-texto">Ingrese únicamente letras y espacios (Mínimo 4 caracteres).</span>
-
                 </div>
 
-                <!-- Campo destinado al ingreso del correo electrónico -->
+                <!-- Campo destinado al ingreso de la empresa -->
                 <div class="campo-formulario">
-
-                    <!-- Etiqueta del campo de correo electrónico -->
-                    <label for="email-cliente">Correo Electrónico de la Empresa:</label>
-
-                    <!-- Campo para ingresar el correo electrónico -->
-                    <input type="email" id="email-cliente" name="email" required placeholder="ejemplo@empresa.com">
-
+                    <label for="wa-empresa">Empresa (Opcional)</label>
+                    <input type="text" id="wa-empresa" name="empresa" placeholder="Ej: Constructora Sur S.A.">
                 </div>
 
-                <!-- Campo destinado al ingreso del teléfono de contacto -->
+                <!-- Campo destinado a la selección del equipo -->
                 <div class="campo-formulario">
-
-                    <!-- Etiqueta del campo de teléfono -->
-                    <label for="telefono-cliente">Teléfono de Contacto Celular:</label>
-
-                    <!-- Campo para ingresar el teléfono -->
-                    <input type="tel" id="telefono-cliente" name="telefono" required pattern="[0-9]{10}" aria-describedby="ayuda-tel" placeholder="2914000000">
-
-                    <!-- Mensaje de ayuda para completar el teléfono -->
-                    <span id="ayuda-tel" class="ayuda-texto">Ingrese 10 números corridos sin espacios ni guiones (Código de área + número).</span>
-
+                    <label for="wa-interes">Equipo de Interés *</label>
+                    <select id="wa-interes" name="interes" required>
+                        <option value="" disabled selected>Seleccione una maquinaria...</option>
+                        <option value="Adoquinera / Bloquera Hidráulica">Adoquinera / Bloquera Hidráulica</option>
+                        <option value="Cosechadora de Turba">Cosechadora de Turba</option>
+                        <option value="Sistemas de Tolvas y Cintas">Sistemas de Tolvas y Cintas</option>
+                        <option value="Mezcladoras Automatizadas">Mezcladoras Automatizadas</option>
+                        <option value="Proyecto a Medida / Ingeniería">Proyecto a Medida / Ingeniería</option>
+                        <option value="Otros">Otros</option>
+                    </select>
                 </div>
 
                 <!-- Campo destinado al detalle del requerimiento industrial -->
                 <div class="campo-formulario">
-
-                    <!-- Etiqueta del campo de mensaje -->
-                    <label for="mensaje-cliente">Detalle del Requerimiento Industrial:</label>
-
-                    <!-- Área de texto para describir la consulta -->
-                    <textarea id="mensaje-cliente" name="mensaje" rows="5" required minlength="10" placeholder="Escriba aquí los detalles de la maquinaria requerida..."></textarea>
-
+                    <label for="wa-mensaje">Detalle del Requerimiento Industrial *</label>
+                    <textarea id="wa-mensaje" name="mensaje" rows="5" maxlength="400" required placeholder="Escriba aquí los detalles de la maquinaria requerida..."></textarea>
+                    <span class="ayuda-texto">Límite: 400 caracteres.</span>
                 </div>
 
                 <!-- Campo correspondiente al envío del formulario -->
-                <div class="campo-formulario">
-
-                    <!-- Botón para enviar la solicitud técnica -->
-                    <button type="submit" class="boton-enviar">Enviar Solicitud Técnica</button>
-
+                <div class="campo-formulario campo-centrado">
+                    <label>Envíe su consulta</label>
+                    
+                    <!-- Botón de imagen personalizado para WhatsApp -->
+                    <button type="submit" class="boton-img-wa" aria-label="Enviar solicitud por WhatsApp" title="Enviar su consulta">
+                        <img src="img/wsp-logo.png" alt="Botón enviar WhatsApp">
+                    </button>
                 </div>
 
             </fieldset>
@@ -216,6 +202,14 @@
                 <li><a href="maquinarias.html">Maquinarias</a></li>
                 <li><a href="galeria.html">Galería</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
+
+                <!-- Ícono de WhatsApp alineado al menú -->
+                <li>
+                    <a href="https://wa.me/5492983415875" class="icono-wa-menu" target="_blank" rel="noopener noreferrer" title="Consultar por WhatsApp">
+                        <img src="img/wsp-logo2.png" alt="WhatsApp">
+                    </a>
+                </li>
+
             </ul>
 
         </nav>

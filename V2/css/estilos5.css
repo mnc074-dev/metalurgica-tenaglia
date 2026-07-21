@@ -239,7 +239,7 @@ body:not(.layout-macro) .banner-hero .titulo-principal,
 body:not(.layout-macro) .banner-hero p {
     width: 100%;
     max-width: 1200px; 
-    text-align: left; /* Volvemos a alinear a la izquierda */
+    text-align: left; 
     margin-left: auto;
     margin-right: auto;
 }
@@ -247,9 +247,9 @@ body:not(.layout-macro) .banner-hero p {
 /* Configuración tipográfica aplicada al título del banner de las páginas internas */
 body:not(.layout-macro) .banner-hero .titulo-principal {
     font-family: "Bungee", sans-serif;
-    font-size: 2.2rem; /* Tamaño reducido original */
+    font-size: 2.2rem; 
     text-shadow: none; 
-    border-left: 5px solid var(--color-primario); /* Tu barra verde lateral */
+    border-left: 5px solid var(--color-primario);
     padding-left: 1rem;
     letter-spacing: normal;
     margin-bottom: 0.5rem;
@@ -783,7 +783,7 @@ body:not(.layout-macro) {
 }
 
 /* Configuración compartida de los campos de ingreso de datos */
-.campo-formulario input, .campo-formulario textarea {
+.campo-formulario input, .campo-formulario textarea, .campo-formulario select {
     padding: 12px;
     border: 1px solid var(--color-borde);
     border-radius: 8px;
@@ -792,13 +792,19 @@ body:not(.layout-macro) {
     color: inherit; 
     background-color: transparent;
     transition: border-color 0.3s, background-color 0.3s;
+    width: 100%; 
 }
 
 /* Cambio de apariencia aplicado a los campos al recibir el foco */
-.campo-formulario input:focus, .campo-formulario textarea:focus {
+.campo-formulario input:focus, .campo-formulario textarea:focus, .campo-formulario select:focus {
     border-color: var(--color-primario);
     background-color: transparent;
     outline: none;
+}
+/* Configuracion de las opciones del menú desplegable para respetar el color del tema actual */
+.campo-formulario select option {
+    background-color: var(--color-fondo-base);
+    color: var(--color-texto-principal);
 }
 
 /* Texto de ayuda utilizado para orientar al usuario durante la carga de datos */
@@ -807,6 +813,12 @@ body:not(.layout-macro) {
     color: inherit; 
     margin-top: 0.3rem; 
     opacity: 0.8;
+}
+
+.campo-centrado {
+    align-items: center;  
+    text-align: center;  
+    margin-top: 1rem;    
 }
 
 /* Botón destinado al envío del formulario */
@@ -833,6 +845,35 @@ body:not(.layout-macro) {
 .boton-enviar:active { 
     background-color: var(--color-contraste-oscuro);
     color: var(--color-fondo-base); 
+}
+
+/* Botón de imágen de whastapp*/
+.boton-img-wa {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: block;
+    margin: 0.01rem auto 0 auto; 
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.boton-img-wa img {
+    width: 100%;
+    max-width: 100px; 
+    height: auto;
+    display: block;
+}
+
+.boton-img-wa:hover, 
+.boton-img-wa:focus {
+    transform: scale(1.05); 
+    filter: brightness(1.1); 
+    outline: none;
+}
+
+.boton-img-wa:active {
+    transform: scale(0.98); 
 }
 
 /* ==========================================================================
@@ -876,6 +917,7 @@ body:not(.layout-macro) {
     display: flex; 
     list-style: none;
     margin-bottom: 1rem; 
+    align-items: center
 }
 
 /* Espaciado horizontal entre las opciones del menú */
@@ -889,6 +931,33 @@ body:not(.layout-macro) {
     color: var(--color-fondo-base); 
     text-decoration: none;
     font-size: 0.9rem;
+}
+
+.icono-wa-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0.5rem;
+    outline: none;
+}
+
+.icono-wa-menu img {
+    width: 70px; 
+    height: auto;
+    display: block;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.3s ease;
+}
+
+/* Efecto al pasar el cursor: Zoom + Salto hacia arriba + Brillo */
+.icono-wa-menu:hover img,
+.icono-wa-menu:focus img {
+    transform: scale(1.15) translateY(-4px); 
+    filter: brightness(1.15);
+}
+
+/* Efecto al hacer clic: Se hunde hacia abajo */
+.icono-wa-menu:active img {
+    transform: scale(0.95) translateY(2px);
 }
 
 /* Cambio de color aplicado a los enlaces al posicionar el cursor */
@@ -909,7 +978,151 @@ body:not(.layout-macro) {
 .badge-w3c:last-child { margin-right: 0;}
 
 /* ==========================================================================
-   13. DISEÑO RESPONSIVO (Media Queries)
+   13 - VENTANA MODAL (SELECTOR DE PRESUPUESTO)
+   ========================================================================== */
+.modal-pantalla {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(17, 24, 39, 0.8); /* Fondo oscuro semitransparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000; /* Por encima de todo, incluso del botón de WhatsApp */
+    
+    /* Estado oculto inicial sin alterar el flujo */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Esta clase la va a inyectar JavaScript */
+.modal-pantalla.activo {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-tarjeta {
+    background-color: #1F2937; /* Gris oscuro industrial coincidente con Tenaglia */
+    border: 1px solid #374151;
+    padding: 2.5rem;
+    border-radius: 4px;
+    width: 90%;
+    max-width: 450px;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.modal-cerrar {
+    position: absolute;
+    top: 1rem;
+    right: 1.2rem;
+    background: none;
+    border: none;
+    color: #9CA3AF;
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s ease;
+}
+
+.modal-cerrar:hover {
+    color: #F3F4F6;
+}
+
+.modal-titulo {
+    font-size: 1.4rem;
+    color: #FFFFFF;
+    margin-bottom: 0.5rem;
+}
+
+.modal-descripcion {
+    color: #9CA3AF;
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+}
+
+.modal-opciones {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Estilo de los enlaces/botones de opción */
+.opcion-enlace {
+    display: block;
+    padding: 1rem;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.opcion-enlace.whatsapp {
+    background-color: #25D366;
+    color: #FFFFFF;
+}
+
+.opcion-enlace.whatsapp:hover {
+    background-color: #20BA56;
+}
+
+/* Opción secundaria (Formulario detallado vía WhatsApp) */
+.opcion-enlace.wsp {
+    background-color: transparent;
+    color: #F3F4F6;
+    border: 1px solid #4B5563;
+}
+
+.opcion-enlace.wsp:hover {
+    background-color: #374151;
+}
+
+.boton-accion {
+    /* Tus reglas actuales de color de fondo, padding, bordes, etc. */
+    
+    font-size: 1.1rem; /* Modificá este valor hasta encontrar el tamaño perfecto */
+    font-weight: 600;  /* Ideal para que quede un poco más grueso y resalte */
+}
+
+/* ==========================================================================
+   BOTÓN METÁLICO (IMAGEN CON EFECTOS DEL BOTÓN TEMA)
+   ========================================================================== */
+.boton-metalico {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: inline-block;
+    /* La transición idéntica a la de tu botón tema */
+    transition-property: transform;
+    transition-duration: 0.3s;
+}
+
+/* Control del tamaño y clonación del diseño del botón tema */
+.boton-metalico img {
+    width: 100%;
+    max-width: 120px;
+    height: auto;
+    display: block;
+    border-radius: 12px; 
+    border: 2px solid var(--color-primario); 
+    padding: 2px;
+    background-color: var(--color-secundario);
+}
+
+/* El mismo efecto de acercamiento (zoom) al pasar el mouse */
+.boton-metalico:hover, 
+.boton-metalico:focus {
+    transform: scale(1.1);
+    outline: none;
+}
+
+/* ==========================================================================
+   14. DISEÑO RESPONSIVO (Media Queries)
    ========================================================================== */
 /* Adaptaciones aplicadas para pantallas medianas (Tablets y menores) */
 @media (max-width: 900px) {

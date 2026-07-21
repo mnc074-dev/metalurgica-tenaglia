@@ -15,7 +15,7 @@
     <meta name="description" content="Más de 50 años fabricando maquinarias eficientes para la construcción, el agro y la industria en Argentina. Fabricantes directos de adoquineras automáticas y cosechadoras.">
 
     <!-- Palabras clave relacionadas con la temática del sitio -->
-    <meta name="keywords" content="Programación, CSS Grid, Flexbox, Bahía Blanca, UPSO, Metalúrgica Tenaglia, Maquinaria Industrial">
+    <meta name="keywords" content="Metalúrgica Tenaglia, Maquinaria Industrial, Adoquineras Hidráulicas, Bloqueras, Cosechadoras de Turba, Maquinaria Pesada, Automatización Industrial, Agro, Construcción, Tres Arroyos, Argentina">
 
     <!-- Autor del documento -->
     <meta name="author" content="Matías Cuello">
@@ -61,7 +61,7 @@
 
         <!-- Botón destinado al cambio entre modo claro y oscuro -->
         <button class="boton-tema" onclick="cambiarTema()" title="Cambiar Día/Noche">
-            <img src="img/boton1.png" alt="Modo Día/Noche">
+            <img src="img/boton1Os.png" alt="Modo Día/Noche">
         </button>
 
     </header>
@@ -76,10 +76,12 @@
         <h2 class="subtitulo-hero">Más de 50 años de trayectoria, calidad y compromiso.</h2>
 
         <!-- Descripción principal de la actividad de la empresa -->
-        <p>Fabricamos soluciones eficientes para procesos industriales del país. Maquinaria pesada diseñada para maximizar el rendimiento en la construcción, el agro y la industria.</p>
+        <p>Fabricamos maquinaria pesada para el agro, la construcción y la industria.</p>
 
-        <!-- Botón de acceso al formulario de contacto -->
-        <a href="contacto.html" class="boton-accion">Solicitar Cotización Técnica</a>
+        <!-- Botón que dispara la ventana modal -->
+        <button id="btn-abrir-presupuesto" class="boton-metalico" aria-label="Solicitar Cotización Técnica">
+            <img src="img/BSolOs.png" alt="Botón Solicitar Cotización">
+        </button>
 
     </section>
 
@@ -201,6 +203,14 @@
                 <li><a href="maquinarias.html">Maquinarias</a></li>
                 <li><a href="galeria.html">Galería</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
+
+                <!-- Ícono de WhatsApp alineado al menú -->
+                <li>
+                    <a href="https://wa.me/5492983415875" class="icono-wa-menu" target="_blank" rel="noopener noreferrer" title="Consultar por WhatsApp">
+                        <img src="img/wsp-logo2.png" alt="WhatsApp">
+                    </a>
+                </li>
+
             </ul>
 
         </nav>
@@ -212,6 +222,33 @@
         </div>
 
     </footer>
+    
+    <!-- Ventana Emergente (Modal) de Opciones de Contacto -->
+    <div id="modal-presupuesto" class="modal-pantalla">
+        <div class="modal-tarjeta">
+            <button id="btn-cerrar-presupuesto" class="modal-cerrar" aria-label="Cerrar ventana">&times;</button>
+            
+            <h3 class="modal-titulo">¿Cómo preferís comunicarte?</h3>
+            <p class="modal-descripcion">Elegí la opción que mejor se adapte a tu necesidad:</p>
+            
+            <div class="modal-opciones">
+                <!-- Opción 1: Contacto Rápido (Lleva al chat directo) -->
+                <a href="https://wa.me/5492983415875?text=¡Hola!%20Me%20comunico%20para%20hacer%20una%20consulta%20rápida." 
+                   class="opcion-enlace whatsapp" 
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                    <span>Contacto Rápido (Chat Directo)</span>
+                </a>
+                
+                <!-- Opción 2: Formulario Detallado -->
+                <a href="contacto.html" class="opcion-enlace wsp">
+                    <span>Cotización Detallada (Formulario)</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/modal.js"></script>
 
 </body>
 </html>
