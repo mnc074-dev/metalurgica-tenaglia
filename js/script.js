@@ -84,3 +84,42 @@ function aplicarColores() {
         if (sector3 != null) { sector3.style.backgroundColor = "#F4F4F4"; sector3.style.borderColor = "#CCCCCC"; }
     }
 }
+
+
+/* ==========================================================================
+   LÓGICA PARA FORMULARIO A WHATSAPP (CONTACTO TÉCNICO)
+   ========================================================================== */
+document.addEventListener('DOMContentLoaded', () => {
+    const formWhatsApp = document.getElementById('formulario-whatsapp');
+
+    if (formWhatsApp) {
+        formWhatsApp.addEventListener('submit', (evento) => {
+            // Prevenimos el comportamiento por defecto de recargar la página
+            evento.preventDefault();
+
+            // Capturamos los valores
+            const nombre = document.getElementById('wa-nombre').value.trim();
+            const empresa = document.getElementById('wa-empresa').value.trim();
+            const interes = document.getElementById('wa-interes').value;
+            const mensaje = document.getElementById('wa-mensaje').value.trim();
+
+            // Número destino (Modificar por el número oficial de Tenaglia)
+            const numeroDestino = "2983415875";
+
+            // Estructuración del mensaje
+            let textoWA = `¡Hola! Solicito cotización técnica.%0A%0A`;
+            textoWA += `*Nombre:* ${nombre}%0A`;
+            
+            if (empresa !== "") {
+                textoWA += `*Empresa:* ${empresa}%0A`;
+            }
+            
+            textoWA += `*Equipo:* ${interes}%0A`;
+            textoWA += `*Detalle:* ${mensaje}`;
+
+            // Apertura de WhatsApp en una pestaña nueva
+            const enlaceWa = `https://wa.me/${numeroDestino}?text=${textoWA}`;
+            window.open(enlaceWa, '_blank');
+        });
+    }
+});
