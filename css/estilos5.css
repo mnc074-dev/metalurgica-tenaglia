@@ -239,7 +239,7 @@ body:not(.layout-macro) .banner-hero .titulo-principal,
 body:not(.layout-macro) .banner-hero p {
     width: 100%;
     max-width: 1200px; 
-    text-align: left; /* Volvemos a alinear a la izquierda */
+    text-align: left; 
     margin-left: auto;
     margin-right: auto;
 }
@@ -247,9 +247,9 @@ body:not(.layout-macro) .banner-hero p {
 /* Configuración tipográfica aplicada al título del banner de las páginas internas */
 body:not(.layout-macro) .banner-hero .titulo-principal {
     font-family: "Bungee", sans-serif;
-    font-size: 2.2rem; /* Tamaño reducido original */
+    font-size: 2.2rem; 
     text-shadow: none; 
-    border-left: 5px solid var(--color-primario); /* Tu barra verde lateral */
+    border-left: 5px solid var(--color-primario);
     padding-left: 1rem;
     letter-spacing: normal;
     margin-bottom: 0.5rem;
@@ -783,7 +783,7 @@ body:not(.layout-macro) {
 }
 
 /* Configuración compartida de los campos de ingreso de datos */
-.campo-formulario input, .campo-formulario textarea {
+.campo-formulario input, .campo-formulario textarea, .campo-formulario select {
     padding: 12px;
     border: 1px solid var(--color-borde);
     border-radius: 8px;
@@ -792,13 +792,19 @@ body:not(.layout-macro) {
     color: inherit; 
     background-color: transparent;
     transition: border-color 0.3s, background-color 0.3s;
+    width: 100%; 
 }
 
 /* Cambio de apariencia aplicado a los campos al recibir el foco */
-.campo-formulario input:focus, .campo-formulario textarea:focus {
+.campo-formulario input:focus, .campo-formulario textarea:focus, .campo-formulario select:focus {
     border-color: var(--color-primario);
     background-color: transparent;
     outline: none;
+}
+/* Configuracion de las opciones del menú desplegable para respetar el color del tema actual */
+.campo-formulario select option {
+    background-color: var(--color-fondo-base);
+    color: var(--color-texto-principal);
 }
 
 /* Texto de ayuda utilizado para orientar al usuario durante la carga de datos */
@@ -807,6 +813,12 @@ body:not(.layout-macro) {
     color: inherit; 
     margin-top: 0.3rem; 
     opacity: 0.8;
+}
+
+.campo-centrado {
+    align-items: center;  
+    text-align: center;  
+    margin-top: 1rem;    
 }
 
 /* Botón destinado al envío del formulario */
@@ -833,6 +845,35 @@ body:not(.layout-macro) {
 .boton-enviar:active { 
     background-color: var(--color-contraste-oscuro);
     color: var(--color-fondo-base); 
+}
+
+/* Botón de imágen de whastapp*/
+.boton-img-wa {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: block;
+    margin: 0.01rem auto 0 auto; 
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.boton-img-wa img {
+    width: 100%;
+    max-width: 100px; 
+    height: auto;
+    display: block;
+}
+
+.boton-img-wa:hover, 
+.boton-img-wa:focus {
+    transform: scale(1.05); 
+    filter: brightness(1.1); 
+    outline: none;
+}
+
+.boton-img-wa:active {
+    transform: scale(0.98); 
 }
 
 /* ==========================================================================
@@ -876,6 +917,7 @@ body:not(.layout-macro) {
     display: flex; 
     list-style: none;
     margin-bottom: 1rem; 
+    align-items: center
 }
 
 /* Espaciado horizontal entre las opciones del menú */
@@ -889,6 +931,33 @@ body:not(.layout-macro) {
     color: var(--color-fondo-base); 
     text-decoration: none;
     font-size: 0.9rem;
+}
+
+.icono-wa-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0.5rem;
+    outline: none;
+}
+
+.icono-wa-menu img {
+    width: 70px; 
+    height: auto;
+    display: block;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.3s ease;
+}
+
+/* Efecto al pasar el cursor: Zoom + Salto hacia arriba + Brillo */
+.icono-wa-menu:hover img,
+.icono-wa-menu:focus img {
+    transform: scale(1.15) translateY(-4px); 
+    filter: brightness(1.15);
+}
+
+/* Efecto al hacer clic: Se hunde hacia abajo */
+.icono-wa-menu:active img {
+    transform: scale(0.95) translateY(2px);
 }
 
 /* Cambio de color aplicado a los enlaces al posicionar el cursor */
@@ -1001,13 +1070,14 @@ body:not(.layout-macro) {
     background-color: #20BA56;
 }
 
-.opcion-enlace.email {
+/* Opción secundaria (Formulario detallado vía WhatsApp) */
+.opcion-enlace.wsp {
     background-color: transparent;
     color: #F3F4F6;
     border: 1px solid #4B5563;
 }
 
-.opcion-enlace.email:hover {
+.opcion-enlace.wsp:hover {
     background-color: #374151;
 }
 
