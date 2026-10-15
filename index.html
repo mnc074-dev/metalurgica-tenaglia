@@ -34,8 +34,12 @@
     <!-- Logo en Google -->
     <link rel="icon" type="image/png" href="img/LogoVerdeFluor.png">
 
-    <!-- Imagen oficial para previsualizaciones en buscadores y redes sociales -->
+    <!-- Previsualizaciones en buscadores y redes sociales (WhatsApp, Facebook, LinkedIn) -->
+    <meta property="og:title" content="Metalúrgica Tenaglia | Maquinaria Industrial y Pesada">
+    <meta property="og:description" content="Más de 50 años fabricando maquinarias eficientes para la construcción, el agro y la industria en Argentina.">
     <meta property="og:image" content="https://metalurgicatenaglia.ar/img/LogoGrandeMTF.jpg">
+    <meta property="og:url" content="https://metalurgicatenaglia.ar/">
+    <meta property="og:type" content="website">
 
     <!-- Vinculación del archivo JavaScript encargado de la interacción del sitio -->
     <script src="js/script.js" defer></script>
@@ -54,15 +58,12 @@
 
         <!-- Menú principal de navegación -->
         <nav class="navegacion-principal" aria-label="Navegación principal">
-
-            <!-- Lista de accesos a las principales secciones del sitio -->
             <ul>
                 <li><a href="index.html#inicio" class="activo">Inicio</a></li>
                 <li><a href="maquinarias.html">Maquinarias</a></li>
                 <li><a href="galeria.html">Galería</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
-
         </nav>
 
         <!-- Botón destinado al cambio entre modo claro y oscuro -->
@@ -96,136 +97,128 @@
 
         <!-- Sección que presenta los principales pilares de la empresa -->
         <section class="propuesta-valor" aria-labelledby="titulo-propuesta">
-
-            <!-- Encabezado de la sección con el logotipo institucional y el título -->
             <header class="encabezado-grilla">
-
-                <!-- Isotipo decorativo de la empresa -->
                 <figure class="viñeta-logo">
                     <img src="img/LogoVerdeFluor.png" alt="Símbolo Tenaglia">
                 </figure>
-
-                <!-- Título de la sección -->
                 <h2 class="titulo-seccion" id="titulo-propuesta">Por qué elegirnos</h2>
-
             </header>
 
-            <!-- Tarjeta correspondiente al primer pilar empresarial -->
             <article class="pilar-card" id="pilar-1">
                 <h3>Innovación Nacional</h3>
                 <p>Desarrollamos soluciones mecánicas y optimizaciones automatizadas que transforman los procesos productivos tradicionales.</p>
             </article>
 
-            <!-- Tarjeta correspondiente al segundo pilar empresarial -->
             <article class="pilar-card" id="pilar-2">
                 <h3>Alta Capacidad</h3>
                 <p>Equipos robustos de gran escala preparados para exigencias industriales extremas y jornadas continuas de alta producción.</p>
             </article>
 
-            <!-- Tarjeta correspondiente al tercer pilar empresarial -->
             <article class="pilar-card" id="pilar-3">
                 <h3>Garantía y Puesta en Marcha</h3>
                 <p>Somos fabricantes directos. Brindamos asesoramiento técnico personalizado, repuestos e instalación en todo el territorio nacional.</p>
             </article>
-
         </section>
         
         <!-- Sección que agrupa las principales áreas de especialización de la empresa -->
         <section class="sectores-industriales" aria-labelledby="titulo-sectores">
-
-            <!-- Encabezado de la sección con el logotipo institucional y el título -->
             <header class="encabezado-grilla">
-
-                <!-- Isotipo decorativo de la empresa -->
                 <figure class="viñeta-logo">
                     <img src="img/LogoVerdeFluor.png" alt="Símbolo Tenaglia">
                 </figure>
-
-                <!-- Título de la sección -->
                 <h2 class="titulo-seccion" id="titulo-sectores">Sectores de Especialización</h2>
-
             </header>
 
-            <!-- Tarjeta correspondiente al sector de la construcción -->
             <article class="tarjeta-sector" id="sector-1">
-
-                <!-- Imagen representativa de la maquinaria para la construcción -->
                 <figure>
                     <img src="img/Bloquera.jpg" alt="Línea de producción de bloqueras hidráulicas automatizadas Tenaglia" class="imagen-adaptable">
                 </figure>
-
                 <h3>Soluciones para la Construcción</h3>
                 <p>Fabricación de adoquineras hidráulicas automatizadas y máquinas de pavimento articulado de gran escala con alta producción diaria.</p>
                 <a href="maquinarias.html#construccion" class="enlace-tarjeta">Ver maquinarias viales</a>
             </article>
 
-            <!-- Tarjeta correspondiente al sector agropecuario -->
             <article class="tarjeta-sector" id="sector-2">
-
-                <!-- Imagen representativa de maquinaria agrícola -->
                 <figure>
                     <img src="img/Cosechadora.jpg" alt="Cosechadora de turba autopropulsada de gran capacidad" class="imagen-adaptable">
                 </figure>
-
                 <h3>Desarrollos para el Agro</h3>
                 <p>Cosechadoras de turba de gran capacidad de aspirado diseñadas para optimizar y triplicar los tiempos de recolección en el campo.</p>
                 <a href="maquinarias.html#agro" class="enlace-tarjeta">Ver línea agrícola</a>
             </article>
 
-            <!-- Tarjeta correspondiente al sector de ingeniería de procesos -->
             <article class="tarjeta-sector" id="sector-3">
-
-                <!-- Imagen representativa de un sistema automatizado para procesos industriales -->
                 <figure>
                     <img src="img/Automatización.jpg" alt="Desgarradora de bolsas para planta de reciclado" class="imagen-adaptable">
                 </figure>
-
                 <h3>Ingeniería de Procesos</h3>
                 <p>Diseño y construcción de sistemas de tolvas, cintas transportadoras y mezcladoras automatizadas a la medida de cada industria.</p>
                 <a href="maquinarias.html#procesos" class="enlace-tarjeta">Ver proyectos a medida</a>
             </article>
+        </section>
 
+        <!-- Novedades / Video -->
+        <section class="seccion-novedades" aria-labelledby="titulo-novedades">
+            <header class="encabezado-grilla">
+                <figure class="viñeta-logo">
+                    <img src="img/LogoVerdeFluor.png" alt="Símbolo Tenaglia">
+                </figure>
+                <h2 class="titulo-seccion" id="titulo-novedades">Novedades</h2>
+            </header>
+
+            <article class="tarjeta-sector tarjeta-novedad">
+                <figure class="contenedor-video">
+                    <iframe 
+                        src="https://www.youtube.com/embed/gDF_fdhZkAQ" 
+                        title="Máquina para la fabricación de postes olímpicos" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </figure>
+                <h3>¡Producí tus propios postes y potenciá tu negocio!</h3>
+                <p><span class="etiqueta-maquina">Máquina para la fabricación de postes olímpicos:</span> La solución que necesitás para producir, crecer y llevar tu negocio al siguiente nivel.</p>
+                <a href="https://wa.me/5492983415875?text=Hola,%20quisiera%20consultar%20por%20la%20máquina%20de%20postes%20olímpicos." target="_blank" rel="noopener noreferrer" class="enlace-tarjeta">Consultar por esta máquina</a>
+            </article>
         </section>
 
     </main>
 
-    <!-- Pie de página del sitio -->
+    <!-- Pie de página del sitio (Con mapa integrado y sin etiquetas W3C) -->
     <footer class="pie-pagina" id="pie-principal">
 
-        <!-- Información institucional de la empresa -->
+        <!-- Columna 1: Información institucional -->
         <section class="info-empresa">
             <h3>Metalúrgica Tenaglia</h3>
-            <p>Caseros y Ameghino — Tres Arroyos, Buenos Aires</p>
+            <p>Av. Caseros 1050 — Tres Arroyos, Buenos Aires</p>
             <p>Más de 50 años brindando soluciones eficientes.</p>
             <p class="firma-autor">&copy; 2026 Matías Nicolás Cuello.</p>
         </section>
 
-        <!-- Menú secundario de navegación -->
+        <!-- Columna 2: Navegación -->
         <nav class="navegacion-secundaria" aria-label="Navegación del pie de página">
-
-            <!-- Lista de accesos rápidos del pie de página -->
             <ul>
                 <li><a href="index.html#inicio">Inicio</a></li>
                 <li><a href="maquinarias.html">Maquinarias</a></li>
                 <li><a href="galeria.html">Galería</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
-
-                <!-- Ícono de WhatsApp alineado al menú -->
                 <li>
                     <a href="https://wa.me/5492983415875" class="icono-wa-menu" target="_blank" rel="noopener noreferrer" title="Consultar por WhatsApp">
                         <img src="img/wsp-logo2.png" alt="WhatsApp">
                     </a>
                 </li>
-
             </ul>
-
         </nav>
 
-        <!-- Indicadores visuales de validación del código -->
-        <div class="certificaciones-w3c">
-            <img src="img/HTML5_Valido.jpg" alt="Certificación W3C HTML5 Válido" class="badge-w3c">
-            <img src="img/CSS_Valido.jpg" alt="Certificación W3C CSS3 Válido" class="badge-w3c">
-        </div>
+        <!-- Columna 3: Mapa -->
+        <section class="mapa-footer" aria-label="Ubicación en el mapa">
+            <iframe 
+                src="https://maps.google.com/maps?q=-38.376783, -60.295919&t=&z=17&ie=UTF8&iwloc=&output=embed" 
+                style="border:0;" 
+                allowfullscreen="" 
+                referrerpolicy="no-referrer-when-downgrade" 
+                title="Ubicación de Metalúrgica Tenaglia">
+            </iframe>
+        </section>
 
     </footer>
     
