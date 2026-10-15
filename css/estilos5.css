@@ -821,7 +821,7 @@ body:not(.layout-macro) {
     margin-bottom: 4rem;
 }
 .tarjeta-novedad {
-    max-width: 750px;
+    max-width: 650px;
     margin: 0 auto; 
     display: block; 
 }
